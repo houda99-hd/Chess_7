@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LIFE Planning</title>
+        <link rel="icon" type="image/jpeg" href="img/logo_LIFE.jpg">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.5.1.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/google.js"></script>
+    </head>
+
+    <body>
+        <!-- Header of the page : logo and name of the tournament -->
+        <!-- Banner of the page : 1st part of the header -->
+        <img id="banner" src="img/banner.jpg" alt="bannière du tournoi">
+
+        <!-- Navigation panel toward other pages : 2nd part of the header -->
+        <div class="navbar-wrapper">
+            <div class="mobile-navbar" onclick="navMobileMenuClicked()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="navbar">
+                <a class="navbar_link" href="index.html">Accueil</a>
+                <a class="navbar_link" href="rankings.html">Classement</a>
+                <a class="navbar_link" href="schedule.html">Planning</a>
+                <a class="navbar_link" href="participants.html">Participants</a>
+                <a class="navbar_link" href="sponsors.html">Sponsors</a>
+            </div>
+        </div>
+
+        <h4 class="waiting_text"> Attention, pour pouvoir visionner les matchs en direct (liens dans le calendrier) vous devez posséder un compte chess.com. Il est possible de le créer pour l'occasion, c'est gratuit et ça vous prendra moins de 5 minutes</h4>
+
+        <div class="container">
+            <div class="accordion" id="accordionExample">
+                <div class="card schedule_day">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link schedule_date" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                29 Novembre 2020
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <div class="schedule_time row">
+                                <h3>21h</h3>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    Poule 1<br>
+                                    <table>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card schedule_day">
+                    <div class="card-header" id="headingFour">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link schedule_date" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                                10 Janvier 2021
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <h2>Tournoi de Bughouse</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="card schedule_day">
+                    <div class="card-header" id="headingEight">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link schedule_date" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                                07 Février 2021
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <h2>Huitièmes et Quarts de Finale</h2>
+                            <img src="img/arbre 8eme.png" alt="arbre 8emes de finales">
+                        </div>
+                    </div>
+                </div>
+                <div class="card schedule_day">
+                    <div class="card-header" id="headingNine">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link schedule_date" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                                14 Février 2021
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordionExample">
+                        <div class="card-body">
+                            <h2>Demi-Finales, Petite Finale et Finale</h2>
+                            <img src="img/arbre demi.png" alt="arbre demis finales">
+                            <!-- <a href="index.html"><h2 class="text-center py-2 text-danger">Regarder les matchs en direct</h2></a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var navMobileMenuClicked = () => {
+                document.getElementById('navbar').classList.toggle('open')
+            }
+        </script>
+    </body>
+
+    <footer>
+        <p class="footer_text"></p>
+    </footer>
+</html>

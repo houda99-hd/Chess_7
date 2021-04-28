@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- This page displays all the teams and participants of the team-->
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LIFE Participants</title>
+        <link rel="icon" type="image/jpeg" href="img/logo_LIFE.jpg">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.5.1.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/google.js"></script>
+    </head>
+
+    <body>
+        <!-- Header of the page : logo and name of the tournament -->
+        <!-- Banner of the page : 1st part of the header -->
+        <img id="banner" src="img/banner.jpg" alt="bannière du tournoi">
+
+        <!-- Navigation panel toward other pages : 2nd part of the header -->
+        <div class="navbar-wrapper">
+            <div class="mobile-navbar" onclick="navMobileMenuClicked()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="navbar">
+                <a class="navbar_link" href="index.html">Accueil</a>
+                <a class="navbar_link" href="rankings.html">Classement</a>
+                <a class="navbar_link" href="schedule.html">Planning</a>
+                <a class="navbar_link" href="participants.html">Participants</a>
+                <a class="navbar_link" href="sponsors.html">Sponsors</a>
+            </div>
+        </div>
+
+        <h4 class="waiting_text"></h4>
+
+        <div class="container teams align-items-center">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="team_logo">
+                    <a href='#' data-toggle="modal" data-target="#team_modal_1"><img class="logo_ecole" src="" alt="logo ENSC"></a>
+                </div>
+                <div class="modal fade team_modal" id="team_modal_1" aria-labelledby="team_modal_1" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog team_modal_dialogue">
+                        <div class="modal-content team_modal_content">
+                            <div class="modal-header team_modal_header">
+                                <h5 class="modal-title"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="team_modal_body">
+                                <ul>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            var navMobileMenuClicked = () => {
+                document.getElementById('navbar').classList.toggle('open')
+            }
+        </script>
+
+    </body>
+
+    <footer>
+        <p class="footer_text"></p>
+    </footer>
+</html>

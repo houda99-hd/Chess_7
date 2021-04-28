@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--The homepage, presenting the latest news if necessary-->
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LIFE Accueil</title>
+        <link rel="icon" type="image/jpeg" href="img/logo_LIFE.jpg">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.5.1.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/google.js"></script>
+    </head>
+
+    <body>
+        <!-- Header of the page : logo and name of the tournament -->
+        <!-- Banner of the page : 1st part of the header -->
+        <div class="page-header"><img id="banner" src="img/banner.jpg" alt="bannière du tournoi"></div>
+
+        <!-- Navigation panel toward other pages : 2nd part of the header -->
+        <div class="navbar-wrapper">
+            <div class="mobile-navbar" onclick="navMobileMenuClicked()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="navbar">
+                <a class="navbar_link" href="index.html">Accueil</a>
+                <a class="navbar_link" href="rankings.html">Classement</a>
+                <a class="navbar_link" href="schedule.html">Planning</a>
+                <a class="navbar_link" href="participants.html">Participants</a>
+                <a class="navbar_link" href="sponsors.html">Sponsors</a>
+            </div>
+        </div>
+
+        <!-- List of articles -->
+        <div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <article class="home_article col-lg-8 col-12">
+                        <h2 class="homepage_article_title"> Article 1</h2>
+
+                    </article>
+
+                    <!-- Sidebar -->
+                    <article class="sidebar col-lg-4 col-12">
+                        <h2 class="sidebar_title text-center"> Documents importants </h2>
+                        <ul>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var navMobileMenuClicked = () => {
+                document.querySelector('.mobile-navbar').classList.toggle('open')
+                document.getElementById('navbar').classList.toggle('open')
+            }
+        </script>
+    </body>
+
+    <footer>
+        <p class="footer_text"></p>
+    </footer>
+</html>
