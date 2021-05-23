@@ -41,4 +41,19 @@ public class Facade {
 		em.persist(u);
 	};
 	
+	/*@POST
+    @Path("/droit")
+    @Consumes({"application/json"})
+    public void setDroit(Droit u) {
+		em.persist(u);
+	};
+	
+    @GET
+    @Path("/droit")
+    @Produces({"application/json"})
+    public Collection<Droit> listeDroit() {
+		TypedQuery<Droit> req = em.createQuery("select p from Droit p", Droit.class) ;
+		Collection<Droit> lp = req.getResultList();
+		return lp;
+	};*/
 }
