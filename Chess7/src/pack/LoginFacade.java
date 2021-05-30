@@ -2,6 +2,7 @@ package pack;
 
 import java.util.Collection;
 
+import javax.annotation.PostConstruct;
 import javax.ejb.LocalBean;
 import javax.ejb.Remote;
 import javax.ejb.Singleton;
@@ -28,8 +29,6 @@ public class LoginFacade {
 
     @PersistenceContext
 	private EntityManager em;
-    
-    private Utilisateur utilisateur;
     
     @GET
     @Path("/compte")
@@ -72,8 +71,7 @@ public class LoginFacade {
     @Path("/utilisateur")
     @Consumes({"application/json"})
     public void setUtilisateur(Utilisateur u) {
-		utilisateur = u;
-		em.persist(utilisateur);
+		em.persist(u);
 	};
 	
 	@GET
@@ -102,7 +100,7 @@ public class LoginFacade {
     
     @POST
     @Path("/verifmdp/{id_email}/{mdp}")
-    @Produces({"application/json"})
+    @Consumes({"application/json"})
     public void modifMdp(@PathParam("id_email") String id_email, @PathParam("mdp") String mdp) {
       Compte c = em.find(Compte.class, id_email);
       c.setMdp(mdp);

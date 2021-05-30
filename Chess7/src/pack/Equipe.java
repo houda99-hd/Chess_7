@@ -15,19 +15,18 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Equipe implements Serializable  {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	private String nom;
 	@ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private Utilisateur createurEquipe;
 	private String description;
 	private String logo;
 	@ManyToMany(mappedBy="listEquipe",fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	private Collection<Utilisateur> ownerEquipe;
+	private Collection<Utilisateur> listeMembres;
+	
+	/**** Getters and Setters ****/
+	
+	private static final long serialVersionUID = 1L;
 	
 	public String getNom() {
 		return nom;
@@ -35,10 +34,10 @@ public class Equipe implements Serializable  {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-	public Utilisateur getCréateurEquipe() {
+	public Utilisateur getCreateurEquipe() {
 		return createurEquipe;
 	}
-	public void setCréateurEquipe(Utilisateur créateurEquipe) {
+	public void setCreateurEquipe(Utilisateur créateurEquipe) {
 		this.createurEquipe = créateurEquipe;
 	}
 	public String getDescription() {
@@ -53,10 +52,13 @@ public class Equipe implements Serializable  {
 	public void setLogo(String logo) {
 		this.logo = logo;
 	}
-	public Collection<Utilisateur> getOwnerEquipe() {
-		return ownerEquipe;
+	public Collection<Utilisateur> getListeMembres() {
+		return listeMembres;
 	}
-	public void setOwnerEquipe(Collection<Utilisateur> ownerEquipe) {
-		this.ownerEquipe = ownerEquipe;
+	public void setListeMembres(Collection<Utilisateur> listeMembres) {
+		this.listeMembres = listeMembres;
+	}
+	public void addMembre(Utilisateur membre) {
+		this.listeMembres.add(membre);
 	}
 }

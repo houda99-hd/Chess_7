@@ -16,6 +16,7 @@ export default class Inscription extends React.Component {
           adresse: '',
           niveau: '',
           droit: '0',
+          profilPic : '',
           error: null,
           isLoaded: false,
           utilisateurs: []
@@ -25,6 +26,7 @@ export default class Inscription extends React.Component {
         this.handleMdpChange = this.handleMdpChange.bind(this);
         this.handleNomChange = this.handleNomChange.bind(this);
         this.handlePrenomChange = this.handlePrenomChange.bind(this);
+        this.handlePictureChange = this.handlePictureChange.bind(this);
         this.handleAdresseChange = this.handleAdresseChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
       }
@@ -66,6 +68,13 @@ export default class Inscription extends React.Component {
               invalid = !/\d/.test(value);
               if (invalid) {
                sentence = 'Adress\'form should be 42 hollywood street';
+              }
+             break;
+
+             case 'profilPic':
+              invalid = false;
+              if (invalid) {
+               sentence = 'Image introuvable';
               }
              break;
         
@@ -132,6 +141,15 @@ export default class Inscription extends React.Component {
         event.preventDefault();
       }*/
 
+      handlePictureChange(event) {
+       /* this.setState({profilPic: event.target.files[0].name});
+        const data = new FormData();
+        data.append('file', event.target.files[0]);
+        console.log(data);  */
+       // console.log(event.target.files[0].name); 
+       this.setState({profilPic: event.target.value});     
+      }
+
     
       handleSubmit(event) {
         event.preventDefault();
@@ -161,7 +179,8 @@ export default class Inscription extends React.Component {
                  nom: this.state.nom,
                  prenom: this.state.prenom,
                  adresse: this.state.adresse,
-                 droit:this.state.droit
+                 droit:this.state.droit,
+                 profilPic : this.state.profilPic
                }
             })
           })
@@ -239,6 +258,10 @@ export default class Inscription extends React.Component {
               {this.makeField('adresse','Adresse: ',this.handleAdresseChange, '')}
             </label>
             <br /> 
+            <label>
+            {this.makeField('profilPic','Image: ',this.handlePictureChange, '')}
+            </label>
+            <br />
             <div class="wrap" >
               <input class="button" type="submit" value="S'inscrire" />
             </div>

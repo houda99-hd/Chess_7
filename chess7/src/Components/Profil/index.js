@@ -2,7 +2,7 @@ import React from 'react';
 import { Container,Row,Col} from 'react-bootstrap';
 
 //import {connect} from 'react-redux';
-import DefaultUserPic from "../../Images/team-male.jpg";
+//import DefaultUserPic from "../../Images/team-male.jpg";
 //import { useHistory,useLocation } from 'react-router-dom';
 //const axios = require('axios');
 //import axios from 'axios';
@@ -51,7 +51,8 @@ export default class Profil extends React.Component {
                 nom : ''+data.nom,
                 prenom : ''+data.prenom,
                 adresse : ''+data.adresse,
-                droit : ''+data.droit
+                droit : ''+data.droit,
+                DefaultUserPic : ''+data.profilPic
             }
        }
 
@@ -115,7 +116,7 @@ export default class Profil extends React.Component {
                 <Row>
                     
             <Col className="container-2">
-            <img src={DefaultUserPic} alt="profils pic" />
+            <img src={this.state.DefaultUserPic.toString()} width = "200px" height = "200px" alt="profils pic" />
             </Col>
                 <Col>
                     <div className="container-2">
@@ -130,16 +131,16 @@ export default class Profil extends React.Component {
                 </Container>
                 <div className="bouton-container">
                 <div class="wrap" >
-                    <Link class="button" to= "/">Mes équipes</Link>
+                    <Link class="button" to= "/equipeListes">Mes équipes</Link>
                 </div>
                 <div className="bouton-container">
-                    <Link class="button" to= "/">Créer équipe</Link>
+                    <Link class="button" to= "/equipeCreation">Créer équipe</Link>
                 </div>
                 <div className="bouton-container">
-                    <Link class="button" to= "/">S'inscrire dans une équipe</Link>
+                    <Link class="button" to= "/equipeInscription">S'inscrire dans une équipe</Link>
                 </div>
                 <div className="bouton-container">
-                    <Link class="button" to= "/">Créer un tournoi</Link>
+                    <Link class="button" to= "/tournoi">Créer un tournoi</Link>
                 </div>
             </div>
                 </div>
