@@ -1,7 +1,0 @@
-beans :
-    - utilisateur
-    - joueur 
-    - équipe
-    - match
-    - poule
-    - sponsor
