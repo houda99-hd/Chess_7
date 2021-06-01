@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../styles.css';
 import { Link } from 'react-router-dom'
-
 import { read_cookie } from 'sfcookies';
 
 export default class Equipe extends React.Component {
@@ -10,35 +9,52 @@ export default class Equipe extends React.Component {
         this.state = {
             utilisateurs: []
         };
-        this.handleUtilisateurEquipeChange = this.handleUtilisateurEquipeChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleUtilisateurEquipeChange(event) {
-      this.setState({utilisateurs: event.target.value});
-    }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    let createur = read_cookie('utilisateur');
-    fetch ("http://localhost:8080/Chess7/chessGestion/listeEquipes/"+ createur.id,{
-      method: "get",
-      headers: {
-        'Accept' : 'application/json',
-        'Content-Type': 'application/json'
-      }}
-    ).then(res => res.json())
-    .then(
-      (result) => {
-        this.setState({
-          utilisateurs: result
-        });
-      })
-    } 
+    componentDidMount() {
+      let createur = read_cookie('utilisateur'); 
+      fetch ("http://localhost:8080/Chess7/chessGestion/listeEquipes/"+ createur.id,{
+        method: "get",
+        headers: {
+          'Accept' : 'application/json',
+          'Content-Type': 'application/json'
+        }}
+      ).then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            utilisateurs: result
+          });
+          console.log(JSON.stringify(result));
+        })
+       /* axios.get("http://localhost:8080/Chess7/chessGestion/listeEquipes/"+ createur.id)
+                  .then(resu => this.setState({
+                    utilisateurs: resu
+                  }));*/
+      }
     
       render() {
-        
-          const { utilisateurs } = this.state;
+          const elements = [];
+          for (const[, value] of this.state.utilisateurs.entries()) {
+              elements.push(
+                  <div class="img-container-equipe">
+                      <p class="flotte">
+                          <div className = "img-container-equipe">
+                              <img src={value.logo} className = "img-container-equipe" alt="article2"/>
+                          </div>
+                      </p>
+                      <p>
+                          <b>Nom de l'équipe :</b>  {value.nom}
+                          <br/>
+                          <b>Description :</b> {value.description}
+                          <br/>
+                          <b>Créateur Equipe :</b> {value.createurEquipe.nom}  {value.createurEquipe.prenom}
+                          <br/>
+                          <span className="créé" style={{color: 'green'}}> [ Créé ]</span>
+                      </p>
+                  </div>
+            )
+          }
             return (
                 <div>
                 <div class= "banner-container">
@@ -51,22 +67,13 @@ export default class Equipe extends React.Component {
                          </li>
                          <li class="accueil-bouton">
                              <div>
-                                 <Link class="accueil-bouton" to='/' >Se déconnecter</Link>
+                                 <Link class="accueil-bouton" to='/deconnexion' >Se déconnecter</Link>
                              </div>
                          </li>
                          </ul> 
                  </nav>
                  </div>
-              <ul>
-                {console.log(utilisateurs)}
-                {utilisateurs.map(utilisateur => (
-                  <li key={utilisateur.nom}>
-                    <br />
-                    <img src={utilisateur.identifiant} alt="" /> {utilisateur.description} <br />
-                    <br />
-                  </li>
-                ))}
-              </ul> 
+                  {elements}
               </div>
             );
             }

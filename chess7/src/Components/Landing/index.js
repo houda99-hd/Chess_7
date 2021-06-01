@@ -8,14 +8,15 @@ import Header from '../Header'
 
 import { Link } from 'react-router-dom'
 
+
 const Landing = () => (
     //<div className="test">
     <div>
         <Header />
     <div id="navbar">
-                <a class="navbar_link" href="acceuil.html">Accueil</a>
-                <a class="navbar_link" href="tournois.html">Tournois</a>
-                <a class="navbar_link" href="sponsors.html">Sponsors</a>
+                <Link class="navbar_link" to="/" >Accueil</Link>
+                <Link class="navbar_link" to="/listesTournoi" >Tournois</Link>
+                <Link class="navbar_link" to="/sponsor" >Sponsors</Link>
     </div>
     <h2 class="homepage_article_title"> Présentation de Chess7 </h2>
         <Fade left>
@@ -34,7 +35,7 @@ const Landing = () => (
                 </p>
                 <Fade left>
                 <p>
-                <h1><Link to= "/">Grand Prix Féminin d'Échecs de Gibraltar</Link></h1>
+                <h1><a href="https://www.europe-echecs.com/art/grand-prix-f-minin-d-checs-de-gibraltar-8372.html">Grand Prix Féminin d'Échecs de Gibraltar</a></h1>
                     Grand Prix FIDE féminin de Gibraltar — Ronde 3 — Kateryna Lagno l'emporte sur sa
                      compatriote Valentina Gunina et rejoint en tête Zhansaya Abdumalik qui a sauvé 
                      une partie compromise face à Gunay Mammadzada. Dinara Saduakassova ferme la 
@@ -51,7 +52,7 @@ const Landing = () => (
                 </p>
                 <Fade left>
                 <p>
-                    <h1><Link to= "/">Champions Chess Tour — Crypto Cup</Link></h1>
+                    <h1><a href="https://www.europe-echecs.com/art/champions-chess-tour-ac-crypto-cup-8514.html">Champions Chess Tour — Crypto Cup</a></h1>
                     La Crypto Cup, 6e étape du Meltwater Champions Chess Tour, 2e jour. Teimour Radjabov, 
                     Fabiano Caruana et Hikaru Nakamura mènent la danse avec 6,5 points devant Anish Giri 
                     et Wesley So. Maxime Vachier-Lagrave bien placé en 6e position, Magnus Carlsen 9e, 

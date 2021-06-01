@@ -59,6 +59,7 @@ export default class Identification extends React.Component {
                   this.props.history.push({pathname:"/profil"}); 
               } else {
                 alert('Mot de passe incorrect');
+                
               }
             })
             } else {

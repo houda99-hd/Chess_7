@@ -17,6 +17,15 @@ button {
     justify-content: center;
 }
 
+.img-container-equipe {
+  width: 60%;
+  height: 60%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .test {
     background-image: url("https://img.over-blog-kiwi.com/0/67/37/03/20171128/ob_126309_ob-df4330-bandeau5.png");
@@ -143,3 +152,36 @@ button {
       opacity: 0;
     }
   }
+
+#navbar_tournoi {
+  text-align: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: black;
+  align-items: center;
+}
+.sponsor-page {
+  width : 90%;
+  padding: 3%;
+  text-align: center;
+}
+
+.sponsor-image,.sponsor-texte{
+  display: inline-block;
+}
+
+.sponsor-image {
+  width : 20%;
+  height: 100%;
+  margin-right: 3%;
+  margin: auto;
+  text-align: center;
+}
+
+.sponsor-texte {
+  width: 70%;
+  margin-left: 3%;
+}
+

@@ -399,3 +399,35 @@
 .imageBackground {
   background-image: url("view-source:https://static.wixstatic.com/media/1bf8c6_7beea2403fd34d539070ce088922cd37%7Emv2.jpg/v1/fill/w_32%2Ch_32%2Clg_1%2Cusm_0.66_1.00_0.01/1bf8c6_7beea2403fd34d539070ce088922cd37%7Emv2.jpg");
 }
+
+/* Sponsors */
+.sponsors_page_title {
+  margin: 40px;
+  text-align: center;
+  font-size: 48px;
+  text-decoration: underline;
+}
+
+.sponsors_page_desc {
+  font-size: 28px;
+  margin: 60px;
+  margin-bottom: 100px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.sponsor {
+  margin: 80px;
+}
+
+.logo_sponsor {
+  vertical-align: middle;
+}
+
+.desc_sponsor {
+  max-width: 60vw;
+  font-size: 20px;
+  float: left;
+  text-align: justify;
+  text-justify: inter-word; 
+}

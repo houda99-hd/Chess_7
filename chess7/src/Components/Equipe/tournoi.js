@@ -24,7 +24,7 @@ export default class Equipe extends React.Component {
                                 </li>
                                 <li class="accueil-bouton">
                                     <div>
-                                        <Link class="accueil-bouton" to='/' >Se déconnecter</Link>
+                                        <Link class="accueil-bouton" to='/deconnexion' >Se déconnecter</Link>
                                     </div>
                                 </li>
                                 </ul> 

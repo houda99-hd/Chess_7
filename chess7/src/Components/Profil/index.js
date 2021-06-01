@@ -6,12 +6,12 @@ import { Container,Row,Col} from 'react-bootstrap';
 //import { useHistory,useLocation } from 'react-router-dom';
 //const axios = require('axios');
 //import axios from 'axios';
-import history from '../history';
+//import history from '../history';
 
 import { Link } from 'react-router-dom'
 import '../../styles.css';
 import '../../App.css';
-import { read_cookie , delete_cookie } from 'sfcookies';
+import { read_cookie } from 'sfcookies';
   
 export default class Profil extends React.Component {
 
@@ -47,7 +47,6 @@ export default class Profil extends React.Component {
            // this.props.history.replace(this.props.location.state, this.state); // Update state of current entry in history stack.
            let data = read_cookie('utilisateur');
            this.state = {
-                user_id : ''+data.id,
                 nom : ''+data.nom,
                 prenom : ''+data.prenom,
                 adresse : ''+data.adresse,
@@ -55,11 +54,6 @@ export default class Profil extends React.Component {
                 DefaultUserPic : ''+data.profilPic
             }
        }
-
-       handleDeco(event) {
-        delete_cookie('utilisateur');
-        history.push({pathname:"/"});
-      }
 
      /*  componentWillReceiveProps(nextProps) {
         var routeChanged = nextProps.location !== this.props.location
@@ -105,7 +99,7 @@ export default class Profil extends React.Component {
                                 </li>
                                 <li class="accueil-bouton">
                                     <div>
-                                        <Link class="accueil-bouton" to='/' >Se déconnecter</Link>
+                                        <Link class="accueil-bouton" to='/deconnexion' >Se déconnecter</Link>
                                     </div>
                                 </li>
                                 </ul> 
@@ -140,8 +134,17 @@ export default class Profil extends React.Component {
                     <Link class="button" to= "/equipeInscription">S'inscrire dans une équipe</Link>
                 </div>
                 <div className="bouton-container">
-                    <Link class="button" to= "/tournoi">Créer un tournoi</Link>
+                    <Link class="button" to= "/creationTournoi">Créer un tournoi</Link>
                 </div>
+            </div>
+            <br />
+            <div className="bouton-container">
+                <div class="wrap" >
+                    <Link class="button" to= "/modifierProfil">Modifier profil</Link>
+                </div >
+                <div class="wrap" >
+                    <Link class="button" to= "/modifierMdp">Modifier mot de passe</Link>
+                </div >
             </div>
                 </div>
             );}
