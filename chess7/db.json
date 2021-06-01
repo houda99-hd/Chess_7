@@ -1,0 +1,16 @@
+{
+    "utilisateurs": [
+      { "id": 1, "identifiant": "houhou", "mdp": "typicode" },
+      { "id": 2, "identifiant": "clotfi", "mdp": "chaimaa" },
+      { "id": 3, "identifiant": "mwissad", "mdp": "mehdi" },
+      { "id": 4, "identifiant": "imriziga", "mdp": "imane" }
+    ],
+    "droits": [
+      { "id": 1, "type": "premium", "postId": 1 },
+      { "id": 2, "type": "normal", "postId": 2 }
+    ],
+    "profiles": [
+        {"id": 1, "image": "./assets/icon/profil-1.jpeg"},
+        {"id": 2, "image": "./assets/icon/profil-2.jpeg"}
+    ]
+  }

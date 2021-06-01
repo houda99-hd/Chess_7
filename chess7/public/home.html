@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--The homepage, presenting the latest news if necessary-->
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chess7</title>
+        <link rel="icon" type="image/jpeg" href="img/logo_LIFE.jpg">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.5.1.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/google.js"></script>
+    </head>
+
+    <body>
+        <ul>
+            <li><a href="#home">Chess7</a></li>
+            <li style="float:right"><a class="active" href="identification.html">S'identifier</a></li>
+            <li style="float:right"><a class="active" href="#inscription">S'inscrire</a></li>
+          </ul> 
+        <!-- Header of the page : logo and name of the tournament -->
+        <!-- Banner of the page : 1st part of the header -->
+        <div class="page-header"><img id="banner" src="img/logo.jpg" alt="image" width = "500" height="400"></div>
+
+        <!-- Navigation panel toward other pages : 2nd part of the header -->
+        <div class="navbar-wrapper">
+            <div class="mobile-navbar" onclick="navMobileMenuClicked()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="navbar">
+                <a class="navbar_link" href="acceuil.html">Accueil</a>
+                <a class="navbar_link" href="tournois.html">Tournois</a>
+                <a class="navbar_link" href="sponsors.html">Sponsors</a>
+            </div>
+        </div>
+
+        <!-- List of articles -->
+        <article class="home_article col-lg-8 col-12">
+            <h2 class="homepage_article_title"> Présentation de Chess7 </h2>
+            <p>Hello, here is some text without a meaning.  This text should show what 
+                a printed text will look like at this place.  If you read this text, 
+                you will get no information.  Really?  Is there no information?  Is there 
+                a difference between this text and some nonsense like not at all!  A 
+                blind text like this gives you information about the selected font, how 
+                the letters are written and an impression of the look.  This text should
+                contain all letters of the alphabet and it should be written in of the
+                original language.There is no need for special content, but the length of
+                words should match the language.</p>
+            <h2 class="homepage_article_title"> Articles </h2>
+            
+            <div class="container-fluid">
+                <div class="row article">
+                    <div class="col-12 col-md-4 logo_article">
+                        <a href="http://txplace.com" target="_blank">
+                            <img src="img/logo_article1" alt="article1">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        Hello, here is some text without a meaning.  This text should show what 
+                        a printed text will look like at this place.  If you read this text, 
+                        you will get no information.  Really?  Is there no information?  Is there 
+                        a difference between this text and some nonsense like not at all!  A 
+                        blind text like this gives you information about the selected font, how 
+                        the letters are written and an impression of the look.  This text should
+                        contain all letters of the alphabet and it should be written in of the
+                        original language.There is no need for special content, but the length of
+                        words should match the language.
+                    </div>
+                </div>
+
+                <div class="row articles">
+                    <div class="col-12 col-md-4 logo_article">
+                        <a href="http://txplace.com" target="_blank">
+                            <img src="img/logo_article2" alt="article2">
+                        </a>
+                    </div>
+                    <div class="col-12 col-md-8">
+                        This  is  the  second  paragraph. Hello, here is some text without 
+                        a meaning.  This text should show what 
+                        a printed text will look like at this place.  If you read this text, 
+                        you will get no information.  Really?  Is there no information?  Is there 
+                        a difference between this text and some nonsense like not at all!  A 
+                        blind text like this gives you information about the selected font, how 
+                        the letters are written and an impression of the look.  This text should
+                        contain all letters of the alphabet and it should be written in of the
+                        original language.There is no need for special content, but the length of
+                        words should match the language.
+                    </div>
+                </div>
+
+            </div>
+        </article>
+
+        <script>
+            var navMobileMenuClicked = () => {
+                document.querySelector('.mobile-navbar').classList.toggle('open')
+                document.getElementById('navbar').classList.toggle('open')
+            }
+        </script>
+    </body>
+
+    <footer>
+        <p class="footer_text"></p>
+    </footer>
+</html>
