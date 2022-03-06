@@ -1,7 +1,7 @@
 #Installation et création du projet Reactjs
 installer visual code .
 
-sudo apt update
+sudo apt update \n
 sudo apt install nodejs
 nodejs -v
 sudo apt install npm
