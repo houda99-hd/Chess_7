@@ -1,13 +1,19 @@
 #Installation et création du projet Reactjs
+
 installer visual code .
 
-sudo apt update \n
+sudo apt update 
+
 sudo apt install nodejs
+
 nodejs -v
+
 sudo apt install npm
 
 sudo npm install -g npx
+
 sudo apt install build-essential checkinstall libssl-dev
+
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.1/install.sh | bash
  
 fermer visual code et le reouvrir
